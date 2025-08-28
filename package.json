@@ -1,0 +1,28 @@
+{
+  "name": "ethereum-mint-token",
+  "version": "1.0.0",
+  "description": "A smart contract for an ERC-20 token on Ethereum",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ichillyzhong/ethereum-mint-token.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/ichillyzhong/ethereum-mint-token/issues"
+  },
+  "homepage": "https://github.com/ichillyzhong/ethereum-mint-token#readme",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^4.0.0"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^5.4.0",
+    "hardhat": "^2.26.3"
+  }
+}
