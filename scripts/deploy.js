@@ -1,7 +1,7 @@
 import hre from "hardhat";
 
 async function main() {
-  const initialSupply = hre.ethers.parseEther("1000000"); // 100万个代币
+  const initialSupply = hre.ethers.parseEther("1000000"); // 1 million tokens
 
   const myToken = await hre.ethers.deployContract("MyToken", [initialSupply]);
 

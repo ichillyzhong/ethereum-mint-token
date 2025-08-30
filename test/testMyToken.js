@@ -8,7 +8,7 @@ describe("MyToken", function () {
   let recipient;
   let initialSupply;
 
-  // 在每个测试用例运行前，自动部署合约并获取账户
+  // Before each test case runs, automatically deploy contract and get accounts
   beforeEach(async function () {
     [owner, recipient] = await hre.ethers.getSigners();
     initialSupply = hre.ethers.parseEther("1000000");
@@ -17,17 +17,17 @@ describe("MyToken", function () {
     myToken = await MyToken.deploy(initialSupply);
   });
 
-  it("应该能够将代币从一个账户转移到另一个账户", async function () {
+  it("should be able to transfer tokens from one account to another", async function () {
     const amountToTransfer = hre.ethers.parseEther("100");
 
-    // 验证初始余额
+    // Verify initial balance
     const ownerInitialBalance = await myToken.balanceOf(owner.address);
     expect(ownerInitialBalance).to.equal(initialSupply);
 
-    // 发起转账交易
+    // Initiate transfer transaction
     await myToken.transfer(recipient.address, amountToTransfer);
 
-    // 验证转账后的余额
+    // Verify balances after transfer
     const ownerFinalBalance = await myToken.balanceOf(owner.address);
     const recipientFinalBalance = await myToken.balanceOf(recipient.address);
 
